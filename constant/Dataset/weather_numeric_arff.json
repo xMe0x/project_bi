@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "outlook": "sunny",
+    "temperature": "85",
+    "humidity": "85",
+    "windy": "FALSE",
+    "play": "no"
+  },
+  {
+    "id": 2,
+    "outlook": "sunny",
+    "temperature": "80",
+    "humidity": "90",
+    "windy": "TRUE",
+    "play": "no"
+  },
+  {
+    "id": 3,
+    "outlook": "overcast",
+    "temperature": "83",
+    "humidity": "86",
+    "windy": "FALSE",
+    "play": "yes"
+  },
+  {
+    "id": 4,
+    "outlook": "rainy",
+    "temperature": "70",
+    "humidity": "96",
+    "windy": "FALSE",
+    "play": "yes"
+  },
+  {
+    "id": 5,
+    "outlook": "rainy",
+    "temperature": "68",
+    "humidity": "80",
+    "windy": "FALSE",
+    "play": "yes"
+  },
+  {
+    "id": 6,
+    "outlook": "rainy",
+    "temperature": "65",
+    "humidity": "70",
+    "windy": "TRUE",
+    "play": "no"
+  },
+  {
+    "id": 7,
+    "outlook": "overcast",
+    "temperature": "64",
+    "humidity": "65",
+    "windy": "TRUE",
+    "play": "yes"
+  },
+  {
+    "id": 8,
+    "outlook": "sunny",
+    "temperature": "72",
+    "humidity": "95",
+    "windy": "FALSE",
+    "play": "no"
+  },
+  {
+    "id": 9,
+    "outlook": "sunny",
+    "temperature": "69",
+    "humidity": "70",
+    "windy": "FALSE",
+    "play": "yes"
+  },
+  {
+    "id": 10,
+    "outlook": "rainy",
+    "temperature": "75",
+    "humidity": "80",
+    "windy": "FALSE",
+    "play": "yes"
+  },
+  {
+    "id": 11,
+    "outlook": "sunny",
+    "temperature": "75",
+    "humidity": "70",
+    "windy": "TRUE",
+    "play": "yes"
+  },
+  {
+    "id": 12,
+    "outlook": "overcast",
+    "temperature": "72",
+    "humidity": "90",
+    "windy": "TRUE",
+    "play": "yes"
+  },
+  {
+    "id": 13,
+    "outlook": "overcast",
+    "temperature": "81",
+    "humidity": "75",
+    "windy": "FALSE",
+    "play": "yes"
+  },
+  {
+    "id": 14,
+    "outlook": "rainy",
+    "temperature": "71",
+    "humidity": "91",
+    "windy": "TRUE",
+    "play": "no"
+  }
+]
