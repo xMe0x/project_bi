@@ -45,7 +45,7 @@ function ChartCard({
   return (
     <div className="bg-[#232323] border border-[#333] rounded-xl p-5 flex flex-col gap-3">
       <p className="text-[10px] font-bold tracking-[0.1em] text-[#888] uppercase">{title}</p>
-      <div className="h-[220px]">{children}</div>
+      <div className="h-[220px] w-full min-w-0">{children}</div>
       <div className="flex flex-wrap gap-3">{legend}</div>
     </div>
   );
@@ -97,7 +97,7 @@ export default function Charts({ data, result }: ChartsProps) {
           </>
         }
       >
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={220}>
           <ScatterChart margin={{ top: 4, right: 8, bottom: 20, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" {...GRID_STYLE} />
             <XAxis dataKey="humidity" type="number" domain={[60, 100]} name="Humidity"
@@ -112,7 +112,9 @@ export default function Charts({ data, result }: ChartsProps) {
             {/* Regression line */}
             <Scatter
               data={linePoints}
+              line={{ stroke: "#c96a6a", strokeWidth: 2 }}
               shape={() => null}
+              
             />
           </ScatterChart>
         </ResponsiveContainer>
@@ -130,7 +132,7 @@ export default function Charts({ data, result }: ChartsProps) {
           </>
         }
       >
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={220}>
           <ScatterChart margin={{ top: 4, right: 8, bottom: 20, left: 0 }}>
             <CartesianGrid strokeDasharray="3 3" {...GRID_STYLE} />
             <XAxis dataKey="humidity" type="number" domain={[60, 100]} name="Humidity"
@@ -145,6 +147,7 @@ export default function Charts({ data, result }: ChartsProps) {
               data={linePoints}
               line={{ stroke: "#5b9bd5", strokeWidth: 2 }}
               shape={() => null}
+
             />
           </ScatterChart>
         </ResponsiveContainer>
