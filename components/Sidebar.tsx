@@ -50,6 +50,19 @@ export default function Sidebar({ result, onCalculate, onReset, prediction }: Si
     if (!isNaN(h) && !isNaN(t)) onCalculate(h, t);
   }
 
+  /* สมการ Linear Regression */
+  function handleRandomPerfectPoint() {
+    const rawHum = Math.random() * 40 + 60;
+    const randomHum = parseFloat(rawHum.toFixed(2)); 
+    
+    const rawTemp = result.theta0 + (result.theta1 * randomHum);
+    const exactTemp = parseFloat(rawTemp.toFixed(2)); 
+    
+    setHumidity(randomHum.toFixed(2));
+    setTemperature(exactTemp.toFixed(2)); 
+    onCalculate(randomHum, exactTemp);
+  }
+
   return (
     <aside className="w-[290px] min-h-full bg-[#232323] border-r border-[#333] flex flex-col gap-5 p-6 shrink-0">
 
@@ -71,19 +84,30 @@ export default function Sidebar({ result, onCalculate, onReset, prediction }: Si
             placeholder="e.g. 75"
             unit="°F"
           />
-          <div className="flex gap-2 mt-1">
+          
+          <div className="flex flex-col gap-2 mt-1">
+            <div className="flex gap-2">
+              <Button
+                onPress={handleCalc}
+                className="flex-1 h-9 bg-[#e0e0e0] text-[#141414] font-bold text-xs tracking-widest uppercase rounded-lg"
+              >
+                Calculate
+              </Button>
+              <Button
+                onPress={onReset}
+                isIconOnly
+                className="h-9 w-9 min-w-9 border border-[#3e3e3e] bg-[#2a2a2a] text-[#888] text-base rounded-lg"
+              >
+                ↺
+              </Button>
+            </div>
+            
+            {/* ปุ่มใหม่สำหรับ Random Perfect Point */}
             <Button
-              onPress={handleCalc}
-              className="flex-1 h-9 bg-[#e0e0e0] text-[#141414] font-bold text-xs tracking-widest uppercase rounded-lg"
+              onPress={handleRandomPerfectPoint}
+              className="w-full h-9 bg-[#1a2620] text-[#6abf8a] border border-[#2a4035] font-bold text-xs tracking-widest uppercase rounded-lg hover:bg-[#203028] transition-colors"
             >
-              Calculate
-            </Button>
-            <Button
-              onPress={onReset}
-              isIconOnly
-              className="h-9 w-9 min-w-9 border border-[#3e3e3e] bg-[#2a2a2a] text-[#888] text-base rounded-lg"
-            >
-              ↺
+              + Auto Perfect Point
             </Button>
           </div>
         </div>
@@ -107,9 +131,9 @@ export default function Sidebar({ result, onCalculate, onReset, prediction }: Si
             ))}
           </div>
 
-          <div className="bg-[#2a2a2a] border border-[#333] rounded-lg p-3">
+          <div className="bg-[#2a2a2a] border border-[#333] rounded-lg p-3 relative overflow-hidden">
             <p className="text-[10px] text-[#666] mb-1">J(θ₀,θ₁) · cost function</p>
-            <p className="text-base font-bold text-[#8dbfe8]">{result.cost.toFixed(2)}</p>
+            <p className="text-base font-bold text-[#8dbfe8]">{result.cost.toFixed(4)}</p>
           </div>
 
           <div className="bg-[#1e2830] border border-[#2a3e50] rounded-lg p-3">
@@ -132,7 +156,7 @@ export default function Sidebar({ result, onCalculate, onReset, prediction }: Si
               </p>
               <p className="text-xl font-bold text-[#6abf8a]">{prediction.pred.toFixed(2)} °F</p>
               <p className="text-[10px] text-[#6abf8a]/70 mt-1">
-                actual = {prediction.temp}°F · error = {Math.abs(prediction.pred - prediction.temp).toFixed(2)}
+                actual = {prediction.temp.toFixed(2)}°F · error = {Math.abs(prediction.pred - prediction.temp).toFixed(2)}
               </p>
             </div>
           </section>
