@@ -112,7 +112,6 @@ export default function Charts({ data, result }: ChartsProps) {
             {/* Regression line */}
             <Scatter
               data={linePoints}
-              line={{ stroke: "#c96a6a", strokeWidth: 2 }}
               shape={() => null}
               
             />
